@@ -29,25 +29,25 @@ Download automated build from public Docker Hub Registry: docker pull neosar/lyc
 
 ## Usage
 
-    docker run -it -d -p 80:80 neosar/lychee-docker
+    docker run -it -d -p 80:80 kdelfour/lychee-mysql-docker
 
-You can add a shared directory as a volume directory with the argument *-v /your-path/uploads/:/uploads/ -v /your-path/data/:/data/* like this :
+You can add a shared directory as a volume directory with the argument *-v /your-path/uploads/:/uploads/ -v /your-path/data/:/data/ -v /your-path/plugins/:/plugins/* like this :
 
-    docker run -it -d -p 80:80 -v /your-path/uploads/:/uploads/ -v /your-path/data/:/data/ neosar/lychee-docker
+    docker run -it -d -p 80:80 -v /your-path/uploads/:/uploads/ -v /your-path/data/:/data/ -v /your-path/plugins/:/plugins/ kdelfour/lychee-mysql-docker
 
 ## Build and run with custom config directory
 
 Get the latest version from github
 
-    git clone https://github.com/neosar/lychee-docker
-    cd lychee-docker/
+    git clone https://github.com/kdelfour/lychee-mysql-docker
+    cd lychee-mysql-docker/
 
 Build it
 
-    sudo docker build --force-rm=true --tag="$USER/lychee-docker:latest" .
+    sudo docker build --force-rm=true --tag="$USER/lychee-mysql-docker:latest" .
 
 And run
 
-    sudo docker run -d -p 80:80 -v /your-path/uploads/:/uploads/ -v /your-path/data/:/data/ $USER/lychee-docker:latest
+    sudo docker run -d -p 80:80 -v /your-path/uploads/:/uploads/ -v /your-path/data/:/data/ -v /your-path/plugins/:/plugins/ $USER/lychee-mysql-docker:latest
 
 Enjoy !!
