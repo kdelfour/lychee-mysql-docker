@@ -1,0 +1,19 @@
+lychee:
+  image: kdelfour/lychee-mysql-docker
+  volumes:
+   - ./builds/uploads/:/uploads/
+   - ./builds/data/:/data/
+   - ./builds/plugins/:/plugins/
+  links:
+    - db:mysql
+  restart: always
+
+db:
+  image: mysql:5.7
+  environment:
+    - MYSQL_USER=lychee
+    - MYSQL_PASSWORD=lychee
+    - MYSQL_DATABASE=lychee
+    - MYSQL_ROOT_PASSWORD=lychee
+  volumes:
+    - ./builds/db:/var/lib/mysql
