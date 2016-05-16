@@ -23,9 +23,9 @@ I also used bobmaerten's Dockerfile at [bobmaerten/docker-wallabag](https://gith
 
 ## Install Docker.
 
-Download automated build from public Docker Hub Registry: docker pull kdelfour/lychee-mysql-docker
+Download automated build from public Docker Hub Registry: docker pull neosar/lychee-docker
 
-(alternatively, you can build an image from Dockerfile: docker build -t="kdelfour/lychee-mysql-docker" github.com/neosar/lychee-docker)
+(alternatively, you can build an image from Dockerfile: docker build -t="neosar/lychee-docker" github.com/neosar/lychee-docker)
 
 ## Usage
 
@@ -34,13 +34,6 @@ Download automated build from public Docker Hub Registry: docker pull kdelfour/l
 You can add a shared directory as a volume directory with the argument *-v /your-path/uploads/:/uploads/ -v /your-path/data/:/data/ -v /your-path/plugins/:/plugins/* like this :
 
     docker run -it -d -p 80:80 -v /your-path/uploads/:/uploads/ -v /your-path/data/:/data/ -v /your-path/plugins/:/plugins/ kdelfour/lychee-mysql-docker
-
-A mysql server with a database is ready if you want to use the docker-compose file provided in the git repository, you can use it with this parameters :
-
-    url : mysql
-    database name : lychee
-    user name : lychee
-    user password : lychee
 
 ## Build and run with custom config directory
 
