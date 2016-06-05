@@ -19,7 +19,7 @@ CMD ["/sbin/my_init"]
 RUN apt-get update && apt-get dist-upgrade -y
 RUN apt-get update && apt-get install -yq wget git unzip nginx fontconfig-config fonts-dejavu-core \
     php5-fpm php5-common php5-json php5-cli php5-common php5-mysql\
-    php5-gd php5-json php5-mcrypt php5-readline psmisc ssl-cert \
+    php5-gd php5-json php5-mcrypt php5-readline php5-imagick psmisc ssl-cert \
     ufw php-pear libgd-tools libmcrypt-dev mcrypt mysql-client
 
 # ------------------------------------------------------------------------------
